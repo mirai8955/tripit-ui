@@ -641,6 +641,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -667,6 +671,9 @@ video {
 }
 .mt-4 {
   margin-top: 1rem;
+}
+.ml-auto {
+  margin-left: auto;
 }
 .flex {
   display: flex;
@@ -806,6 +813,11 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 .overflow-hidden {
   overflow: hidden;

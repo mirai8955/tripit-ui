@@ -32,7 +32,7 @@ export function TripCard({ trip }: TripCardProps) {
 
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-      {/* ヘッダー */}
+      {/* Header */}
       <div className="p-6 border-b border-gray-100">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-3">
@@ -55,7 +55,7 @@ export function TripCard({ trip }: TripCardProps) {
 
         <h3 className="text-xl font-bold text-gray-900 mb-2">{trip.title}</h3>
         
-        {/* 画像 */}
+        {/* Images */}
         {trip.images.length > 0 && (
           <div className="mb-4">
             <img
@@ -67,7 +67,7 @@ export function TripCard({ trip }: TripCardProps) {
         )}
       </div>
 
-      {/* タイムライン（プレビュー/展開） */}
+      {/* Timeline (Preview/Expanded) */}
       <div className="p-6">
         <TripTimeline 
           timeline={trip.timeline} 
@@ -83,19 +83,19 @@ export function TripCard({ trip }: TripCardProps) {
             {isExpanded ? (
               <>
                 <ChevronUp className="h-4 w-4 mr-2" />
-                折りたたむ
+                Show Less
               </>
             ) : (
               <>
                 <ChevronDown className="h-4 w-4 mr-2" />
-                すべて表示 ({trip.timeline.length}箇所)
+                Show All ({trip.timeline.length} stops)
               </>
             )}
           </Button>
         )}
       </div>
 
-      {/* アクション */}
+      {/* Actions */}
       <div className="px-6 py-4 border-t border-gray-100 flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Button
@@ -112,12 +112,12 @@ export function TripCard({ trip }: TripCardProps) {
           
           <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-gray-600">
             <Share2 className="h-4 w-4" />
-            <span>シェア</span>
+            <span>Share</span>
           </Button>
         </div>
 
         <Button variant="outline" size="sm">
-          詳細を見る
+          View Details
         </Button>
       </div>
     </div>

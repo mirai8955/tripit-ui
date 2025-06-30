@@ -9,10 +9,10 @@ export default function HomePage() {
       <main className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            旅行計画をシェアしよう
+            Share Your Travel Adventures
           </h1>
           <p className="text-lg text-gray-600 mb-8">
-            世界中の旅行者の実体験をもとにした、本当に役立つ旅行計画を見つけよう
+            Discover real travel experiences from travelers around the world and plan your perfect trip
           </p>
           <SearchBar />
         </div>

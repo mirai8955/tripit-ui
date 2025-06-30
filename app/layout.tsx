@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'tripit - 旅行計画シェアプラットフォーム',
-  description: '世界中のユーザーが旅行計画をシェアし、参考にできるソーシャルプラットフォーム',
+  title: 'tripit - Travel Itinerary Sharing Platform',
+  description: 'A social platform where travelers worldwide share and discover amazing travel itineraries',
 }
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         {children}
       </body>
