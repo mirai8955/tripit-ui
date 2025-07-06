@@ -8,9 +8,10 @@ CREATE TABLE `users` (
 	`middle_name` VARCHAR(100) DEFAULT NULL,
 	`last_name` VARCHAR(100) DEFAULT NULL,
 	`email` VARCHAR(255) NOT NULL,
+    `age` TINYINT UNSIGNED DEFAULT NULL,
+    `sex` TINYINT DEFAULT NULL COMMNET "M: 0, F: 1",
 	`lang` 	CHAR(2) NOT NULL,
 	`country_code` CHAR(2) NOT NULL,
-	
 	`created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
 	`updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	
@@ -22,8 +23,8 @@ CREATE TABLE 'addresses' (
     `postal_code` VARCHAR(20) DEFAULT NULL,
 	`state_or_region` VARCHAR(20) DEFAULT NULL,
 	`city` VARCHAR(200) DEFAULT NULL,
-	`address_line1` VARCHAR(255) DEFAULT NULL,
-	`address_line2` VARCHAR(255) DEFAULT NULL,
+	`address_line1` VARCHAR(255) DEFAULT NULL, -- Building name, room number, etc.
+	`address_line2` VARCHAR(255) DEFAULT NULL, -- Building name, room number, etc.
 	`raw_address` TEXT DEFAULT NULL COMMENT "Inputted raw address",
 	`formatted_address` TEXT DEFAULT NULL COMMENT "Address for display",
     `address_lon` DOUBLE DEFAULT NULL,
@@ -35,8 +36,8 @@ CREATE TABLE 'addresses' (
 CREATE TABLE user_phones (
   id BINARY(16) PRIMARY KEY,
   user_id BINARY(16) NOT NULL,
-  phone_number VARCHAR(20) NOT NULL,      -- E.164形式で保存（例: 819012345678）
-  country_code CHAR(2) NOT NULL,          -- ISO 3166-1 alpha-2（例: 'JP'）
+  phone_number VARCHAR(20) NOT NULL,      -- Stored in E.164 format (e.g., 819012345678)
+  country_code CHAR(2) NOT NULL,          -- ISO 3166-1 alpha-2 (e.g., 'JP')
   `type` VARCHAR(10) DEFAULT NULL COMMENT "home, mobile etc...",
   is_primary BOOLEAN DEFAULT FALSE,
   is_verified BOOLEAN DEFAULT FALSE,
