@@ -17,7 +17,7 @@ CREATE TABLE `users` (
 	
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 	
-CREATE TABLE 'addresses' (
+CREATE TABLE `addresses` (
     `id` BINARY(16) NOT NULL PRIMARY KEY,
     `user_id` BINARY(16) NOT NULL COMMENT "Reference user",
     `postal_code` VARCHAR(20) DEFAULT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE 'addresses' (
     `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
 
-CREATE TABLE user_phones (
+CREATE TABLE `phones` (
   id BINARY(16) PRIMARY KEY,
   user_id BINARY(16) NOT NULL,
   phone_number VARCHAR(20) NOT NULL,      -- Stored in E.164 format (e.g., 819012345678)
@@ -43,3 +43,10 @@ CREATE TABLE user_phones (
   is_verified BOOLEAN DEFAULT FALSE,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )ENGINE=InnoDB DEFAUTL CHARSET=uft8mb4;
+
+CREATE TABLE `profiles` (
+    `id` BINARY(16) NOT NULL PRIMARY KEY,
+    `user_id` BINARY(16) NOT NULL COMMENT "Reference user",
+    `introduction` DEFAULT NULL TEXT,
+    `image_url` DEFAULT NULL VARCHAR(300)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
