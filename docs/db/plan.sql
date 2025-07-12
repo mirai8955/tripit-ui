@@ -1,7 +1,11 @@
 
 
 
-CREATE TABLE `plan`
+CREATE TABLE `plan` (
+    `id` BINARY(16) NOT NULL PRIMARY KEY,
+    `user_id` BINARY(16) NOT NULL COMMENT "References users table",
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
