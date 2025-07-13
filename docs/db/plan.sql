@@ -1,7 +1,7 @@
 
 
 
-CREATE TABLE `plan` (
+CREATE TABLE `plans` (
     `id` BINARY(16) NOT NULL PRIMARY KEY,
     `user_id` BINARY(16) NOT NULL COMMENT "References users table",
     `title` VARCHAR(100) NOT NULL,
